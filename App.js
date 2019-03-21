@@ -5,7 +5,7 @@ import { Provider as ReduxProvider } from "react-redux";
 import  {Route, BrowserRouter as Router,Link, Switch} from "react-router-dom";
 import configureStore from "./modules/store";
 import Home from "./components/Home"
-
+import Weather from "./components/Weather"
 
 const reduxStore = configureStore(window.REDUX_INITIAL_DATA);
 
@@ -14,7 +14,7 @@ const routing = (
     
     <Switch>
       <Route  path="/" exact component={Home}/>
-     
+     <Route path="/weather/:month/:day" component={Weather}/>
     </Switch>
    
   </Router>

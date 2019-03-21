@@ -2,21 +2,21 @@ import React, { Component } from 'react'
 import ACTIONS from "../modules/action";
 import { connect } from "react-redux";
 
-  
+ /* 
 const mapStateToProps = state => ({
     weathers=state.weathers
 });
-  
+  */
 const mapDispatchToProps = dispatch => ({
-    obtainWeather: date => dispatch(ACTIONS.obtainWeather(date))
+    obtainWeather: month => dispatch(ACTIONS.obtainWeather(month))
 });
 
-export default class Weather extends Component {
+class Weather extends Component {
 
     constructor() {
         super();
         this.state = {
-            date:"",
+            month:"",
             
         };
     }
@@ -28,4 +28,4 @@ export default class Weather extends Component {
     )
   }
 }
-export default connect( mapStateToProps, mapDispatchToProps)(Weather);
+export default connect( mapDispatchToProps)(Weather);

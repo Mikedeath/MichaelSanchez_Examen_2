@@ -20,6 +20,7 @@ class Home extends Component{
     }
     
     handleSubmit =()=> {
+        
        if(this.state.t1==="Bienvenido"){
         this.setState=({
             t1:"Weather App",

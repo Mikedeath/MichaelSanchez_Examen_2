@@ -8,27 +8,8 @@ const defaultState = {
 
 const todoReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case ACTIONS.Types.CREATE_ITEM: {
-      console.log(action);
+    
 
-      let item = action.payload;
-      let newItem = { id: state.items.length + 1, description: item };
-      let newState = _.cloneDeep(state);
-      newState.items.push(newItem);
-      return newState;
-    }
-case ACTIONS.Types.CHANGE_CODE_NAME:{
-  //console.log(action);
-    let newState = _.cloneDeep(state);
-    if(state.code==="Bienvenido a Project Code Names"){
-    newState.code="813N83N1D0 4 PR0J3CT C0D3 N4M3";
-    }
-   else{
-     newState.code="Bienvenido a Project Code Names";
-
-    }
-   return newState
-}
 
     case ACTIONS.Types.DELETE_ITEM: {
       let newState = _.cloneDeep(state);
@@ -41,7 +22,11 @@ case ACTIONS.Types.CHANGE_CODE_NAME:{
     case ACTIONS.Types.OBTAIN_WEATHER:{
       let newState = _.cloneDeep(state);
       console.log(action.payload);
-
+      let date = _.findIndex(newState.weatheritems, { month: action.payload });
+      //No se como poner que a partir del index se muestre max y min aqui abajo
+      //newState.weatheritems.map()
+      
+      return newState;
     }
   
     default:
